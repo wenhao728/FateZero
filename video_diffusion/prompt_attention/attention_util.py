@@ -336,7 +336,7 @@ def make_controller(tokenizer, prompts: List[str], is_replace_controller: bool,
             latent_blend = SpatialBlender( prompts, blend_words, 
                                        start_blend = 0.2, end_blend=0.8,
                                        tokenizer=tokenizer, th=blend_th, NUM_DDIM_STEPS=NUM_DDIM_STEPS,
-                            save_path=save_path+f'/latent_blend_mask',
+                            save_path=save_path+f'/latent_blend_mask' if save_path is not None else None,
                             prompt_choose='both')
             print(f'Blend latent mask with threshold {blend_th}')
         else:
@@ -345,7 +345,7 @@ def make_controller(tokenizer, prompts: List[str], is_replace_controller: bool,
             attention_blend = SpatialBlender( prompts, blend_words, 
                                                     start_blend = 0.0, end_blend=2,
                                                   tokenizer=tokenizer, th=blend_th, NUM_DDIM_STEPS=NUM_DDIM_STEPS,
-                           save_path=save_path+f'/attention_blend_mask',
+                           save_path=save_path+f'/attention_blend_mask' if save_path is not None else None,
                            prompt_choose='source')
             print(f'Blend self attention mask with threshold {blend_th}')
         else:

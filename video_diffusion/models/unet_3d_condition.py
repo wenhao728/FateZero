@@ -469,6 +469,8 @@ class UNetPseudo3DConditionModel(ModelMixin, ConfigMixin):
         config["down_block_types"] = [
             convert_2d_to_3d_block(block) for block in config["down_block_types"]
         ]
+        config['mid_block_type'] = "UNetMidBlockPseudo3DCrossAttn"
+        # config['mid_block_type'] = "UNetMidBlock3DCrossAttn"
         config["up_block_types"] = [convert_2d_to_3d_block(block) for block in config["up_block_types"]]
         if model_config is not None:
             config.update(model_config)

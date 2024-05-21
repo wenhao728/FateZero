@@ -1,6 +1,6 @@
 # CUDA_VISIBLE_DEVICES=7 python test_fatezero.py --config config/teaser/jeep_watercolor.yaml
 
-pretrained_model_path: "./ckpt/stable-diffusion-v1-4"
+pretrained_model_path: "/data/trc/tmp-swh/models/stable-diffusion-v1-5"
 
 dataset_config:
     path: "data/teaser_car-turn"
